@@ -1,6 +1,8 @@
 clear all; close all; clc
 
+savefig(designImageRetrieval);
 loadImagesButton();
+
 
 function loadImagesButton
 
@@ -8,3 +10,4 @@ function loadImagesButton
     V = pinv(Vpiu);
 
 end
+
