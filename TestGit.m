@@ -18,4 +18,7 @@ figure(4);imshow(Fsh, []); title('Fuorier centered image')
 Vpiu = log(1+Fsh);
 figure(5);imshow(Vpiu, []); title('log transformed image')
 
-V = pinv(Vpiu);
+VpiuCol = reshape(Vpiu, [], 1); %matrix to column vector
+VpiuRow = reshape(Vpiu, 1, []); %matrix to row vector
+
+V = pinv(VpiuRow)
