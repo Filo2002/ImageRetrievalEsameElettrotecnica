@@ -17,3 +17,5 @@ figure(4);imshow(Fsh, []); title('Fuorier centered image')
 %CLM(?) log della trasformata
 Vpiu = log(1+Fsh);
 figure(5);imshow(Vpiu, []); title('log transformed image')
+
+V = pinv(Vpiu);
