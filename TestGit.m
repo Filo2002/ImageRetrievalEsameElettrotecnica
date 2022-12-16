@@ -22,3 +22,10 @@ VpiuCol = reshape(Vpiu, [], 1); %matrix to column vector
 VpiuRow = reshape(Vpiu, 1, []); %matrix to row vector
 
 V = pinv(VpiuRow)
+
+function LoadImagesButton
+
+    Vpiu = ExtractVpiuVector();
+    V = pinv(Vpiu);
+
+end
