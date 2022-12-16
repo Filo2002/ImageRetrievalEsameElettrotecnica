@@ -1,7 +1,7 @@
 clear all; close all; clc
 
 imdata = imread('foto.jpg');
-imdata = imresize(imdata, [1080 1080]);
+imdata = imresize(imdata, [250 250]);
 figure(1);imshow(imdata); title('Original image')
 
 imdata = rgb2gray(imdata);
