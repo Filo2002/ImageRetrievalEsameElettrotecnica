@@ -1,5 +1,5 @@
-function Vpiu = ExtractVpiuVector()
-    imagefiles = dir('*.jpg');     
+function Vpiu = extractVpiuVector()
+    imagefiles = dir('Images/*.jpg');     
     nfiles = length(imagefiles);
 
     Vpiu = zeros(nfiles, 62500);
