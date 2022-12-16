@@ -6,7 +6,7 @@ loadImagesButton();
 
 function loadImagesButton
 
-    Vpiu = ExtractVpiuVector();
+    Vpiu = extractVpiuVector();
     V = pinv(Vpiu);
 
 end

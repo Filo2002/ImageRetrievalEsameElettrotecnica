@@ -1,12 +1,13 @@
 function Vpiu = extractVpiuVector()
-    imagefiles = dir('Images/*.jpg');     
+    directory = 'Images/';
+    imagefiles = dir(strcat(directory, '*.jpg'));     
     nfiles = length(imagefiles);
 
     Vpiu = zeros(nfiles, 62500);
 
     for ii=1:nfiles
         currentfilename = imagefiles(ii).name;
-        imdata = imread(currentfilename);
+        imdata = imread(strcat(directory, currentfilename));
         imdata = imresize(imdata, [250 250]);
         imdata = rgb2gray(imdata);
 

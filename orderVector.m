@@ -1,5 +1,5 @@
 function vettOrdered = orderVector(vettA,vettB,delta)
-    for i=1:size(vettA)
+    for i=1:length(vettA)
         if((vettA(i)*vettB(i))>delta)
            vettOrdered(i)=vettA(i)*vettB(i);
         else
