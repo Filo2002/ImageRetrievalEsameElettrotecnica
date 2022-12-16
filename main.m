@@ -1,5 +1,6 @@
 clear all; close all; clc
 
+savefig(designImageRetrieval);
 loadImagesButton();
 
 imdata = imread('foto.jpg');
@@ -24,3 +25,4 @@ function loadImagesButton
     V = pinv(Vpiu);
 
 end
+
