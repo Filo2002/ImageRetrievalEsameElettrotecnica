@@ -12,6 +12,12 @@ classdef StoreData
             %   Detailed explanation goes here
             imgSize = 250;
         end
+
+        function maxImg = GetMaximumImages()
+            %STOREDATA Construct an instance of this class
+            %   Detailed explanation goes here
+            maxImg = 5;
+        end
         
     end
 end

@@ -40,13 +40,22 @@ for index=1:totImage
         selfAttVec(ii) = selfAtt(Vpiu(ii, :), V(:, ii), q, 50);
     end
     
-    simNorm = normalization(similarityVec(2), similarityVec); %1 corrisponde alla 1 foto per la ricerca, in questo caso il cerchio.
-    selfAttNorm = normalization(selfAttVec(2), selfAttVec);
+    simNorm = normalization(similarityVec(3), similarityVec); %1 corrisponde alla 1 foto per la ricerca, in questo caso il cerchio.
+    selfAttNorm = normalization(selfAttVec(3), selfAttVec);
     simBest(index, 1) = abs(simNorm);
     simBest(index, 2) = abs(selfAttNorm);
 end
 
 simBest
+sortedVect = sortVector(simBest, StoreData.GetMaximumImages());
+
+for jj=1:StoreData.GetMaximumImages()
+
+    currentfilename = imagefiles(sortedVect(jj)).name;
+    imdata = imread(strcat(directory, currentfilename));
+    figure(jj);imshow(imdata); title(jj)
+
+end
 
 function loadImagesButton
 
