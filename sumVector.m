@@ -5,7 +5,7 @@ function tot = sumVector(orderVett)
 
     for ii=1:nValues
         
-        tot = tot + orderVett(ii);
+        tot = tot + abs(orderVett(ii));
 
     end
 

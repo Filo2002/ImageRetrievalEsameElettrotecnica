@@ -9,7 +9,7 @@ function Vpiu = extractVpiuVector()
         currentfilename = imagefiles(ii).name;
         imdata = imread(strcat(directory, currentfilename));
         imdata = imresize(imdata, [250 250]);
-        imdata = rgb2gray(imdata);
+        imdata = im2gray(imdata);
 
         VpiuKRow = clm(imdata); %matrix to row vector
 
