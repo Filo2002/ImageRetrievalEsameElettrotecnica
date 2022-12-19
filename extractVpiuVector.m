@@ -14,7 +14,7 @@ function Vpiu = extractVpiuVector(fullName)
     Vpiu(1,:) = VpiuKRow;
 
     for ii=2:nfiles
-        currentfilename = imagefiles(ii).name;
+        currentfilename = imagefiles(ii - 1).name;
         imdata = imread(strcat(directory, currentfilename));
         imdata = imresize(imdata, [imageSize imageSize]);
         imdata = im2gray(imdata);
