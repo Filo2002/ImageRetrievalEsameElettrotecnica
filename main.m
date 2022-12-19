@@ -2,13 +2,14 @@ clear all; close all; clc
 
 %savefig(designImageRetrieval);
 loadImagesButton();
-Vpiu = extractVpiuVector();
+Vpiu = extractVpiuVector('foto.jpg');
 V = pinv(Vpiu);
 
 choseIndex = mainFunction(Vpiu, V);
 imageSize = StoreData.GetImageSize();
 directory = 'Images/foto_icon/';
-imagefiles = dir(strcat(directory, '*.jpg'));  
+imagefiles = dir(strcat(directory, '*.jpg')); 
+ 
 
 %feedback di prova impostando prefissata l'immagine 3
 currentfilename = imagefiles(choseIndex).name;
@@ -25,13 +26,6 @@ Vpiu = pinv(V);
 
 mainFunction(Vpiu, V);
 
-
-function loadImagesButton
-
-    Vpiu = extractVpiuVector();
-    V = pinv(Vpiu);
-
-end
 
 function choseIndex = mainFunction(Vpiu, V)
     close all;
@@ -70,8 +64,8 @@ function choseIndex = mainFunction(Vpiu, V)
             selfAttVec(ii) = selfAtt(Vpiu(ii, :), V(:, ii), q, 50);
         end
         
-        simNorm = normalization(similarityVec(3), similarityVec); %1 corrisponde alla 1 foto per la ricerca, in questo caso il cerchio.
-        selfAttNorm = normalization(selfAttVec(3), selfAttVec);
+        simNorm = normalization(similarityVec(2), similarityVec); %1 corrisponde alla 1 foto per la ricerca, in questo caso il cerchio.
+        selfAttNorm = normalization(selfAttVec(2), selfAttVec);
         simBest(index, 1) = abs(simNorm);
         simBest(index, 2) = abs(selfAttNorm);
     end
@@ -87,6 +81,6 @@ function choseIndex = mainFunction(Vpiu, V)
     
     end
 
-    choseIndex = sortedVect(5);
+    choseIndex = sortedVect(1);
 end
 
