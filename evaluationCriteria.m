@@ -1,7 +1,13 @@
+%funzione per popolare vettore contenente parametri di similarità per funzioni sotto
+function rank = popolateRank(simbest, sortedVector,n)
+    for i=1:n
+       rank(i)=simbest(sortedVector(i),2);
+    end
+end
+
 function Rn = normalizedRecall(n,N,rank)
     sumRank=0;
     sumI=0;
-    %sumRank=sumVector(rank); ???
     for i=1:n
         sumRank=sumRank+rank(i);
         sumI=sumI+i;
