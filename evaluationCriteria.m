@@ -1,13 +1,14 @@
 %funzione per popolare vettore contenente parametri di similarità per funzioni sotto
-function rank = popolateRank(simbest, sortedVector,n)
+function rank = popolateRank(simBest, sortedVector,n)
     for i=1:n
-       rank(i)=simbest(sortedVector(i),2);
+       rank(i)=simBest(sortedVector(i),2);
     end
 end
 
-function Rn = normalizedRecall(n,N,rank)
+function Rn = normalizedRecall(n,N,simBest,sortedVector)
     sumRank=0;
     sumI=0;
+    rank=popolateRank(simBest,sortedVector,n);
     for i=1:n
         sumRank=sumRank+rank(i);
         sumI=sumI+i;
@@ -15,9 +16,10 @@ function Rn = normalizedRecall(n,N,rank)
     Rn=1-((sumRank-sumI)/n(N-n));
 end
 
-function Pn = normalizedPrecision(n,N,rank)
+function Pn = normalizedPrecision(n,N,simBest,sortedVector)
     sumRank=0;
     sumI=0;
+    rank=popolateRank(simBest,sortedVector,n);
     for i=1:n
         sumRank=sumRank+log(rank(i));
         sumI=sumI+log(i);
@@ -26,6 +28,7 @@ function Pn = normalizedPrecision(n,N,rank)
     Pn=1-((sumRank-sumI)/den);
 end
 
-function Ln = lastPlaceRanking(n,N,rank)
+function Ln = lastPlaceRanking(n,N,simBest,sortedVector)
+    rank=popolateRank(simBest,sortedVector,n);
     Ln=1-((rank(n)-n)/(N-n));
 end
