@@ -7,5 +7,5 @@ function Pn = normalizedPrecision(n,N,simBest,sortedVector)
         sumI=sumI+log(i);
     end
     den = log(factorial(N)/log(factorial(n)*factorial(N-n)));
-    Pn=1-((sumRank-sumI)/den);
+    Pn=1-abs(((sumRank-sumI)/den));
 end
