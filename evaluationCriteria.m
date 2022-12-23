@@ -1,7 +1,7 @@
 %funzione per popolare vettore contenente parametri di similarità per funzioni sotto
 function rank = popolateRank(simBest, sortedVector,n)
     for i=1:n
-       rank(i)=simBest(sortedVector(i),2);
+       rank(i)=simBest(sortedVector(i));
     end
 end
 
