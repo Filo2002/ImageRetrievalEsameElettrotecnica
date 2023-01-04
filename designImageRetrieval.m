@@ -93,7 +93,7 @@ classdef designImageRetrieval < matlab.apps.AppBase
                     selfAttVec(ii) = selfAtt(Vpiu(ii, :), V(:, ii), q, 50);
                 end
 
-                selfAttNorm = normalization(selfAttVec(2), selfAttVec);
+                selfAttNorm = normalization(selfAttVec(1), selfAttVec);
                 simBest(index, 1) = abs(selfAttNorm);
 
             end
@@ -137,7 +137,7 @@ classdef designImageRetrieval < matlab.apps.AppBase
                     similarityVec(ii) = sumVector(orderedVectors(ii, :));
                 end
                 
-                simNorm = normalization(similarityVec(2), similarityVec); %1 corrisponde alla 1 foto per la ricerca, in questo caso il cerchio.
+                simNorm = normalization(similarityVec(1), similarityVec); %1 corrisponde alla 1 foto per la ricerca, in questo caso il cerchio.
                 simBest(index, 1) = abs(simNorm);
             end
 
@@ -183,7 +183,7 @@ classdef designImageRetrieval < matlab.apps.AppBase
                     matrixApp(:,1) = V(:,1);
                     matrixApp(:,2) = pinv(clm(imdata));
 
-                    im.ButtonDownFcn = @(src,event)ImageClicked(app, matrixApp ,event);
+                    im.ButtonDownFcn = @(src,event)ImageClicked(app, matrixApp, event);
                 end
             end
             
