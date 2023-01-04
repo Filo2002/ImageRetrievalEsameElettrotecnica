@@ -1,4 +1,4 @@
-classdef designImageRetrieval < matlab.apps.AppBase
+classdef main < matlab.apps.AppBase
 
     % Properties that correspond to app components
     properties (Access = public)
@@ -490,7 +490,7 @@ classdef designImageRetrieval < matlab.apps.AppBase
     methods (Access = public)
 
         % Construct app
-        function app = designImageRetrieval
+        function app = main
 
             % Create UIFigure and components
             createComponents(app)
