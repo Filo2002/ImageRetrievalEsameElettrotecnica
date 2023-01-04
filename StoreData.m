@@ -10,7 +10,7 @@ classdef StoreData
         function imgSize = GetImageSize()
             %STOREDATA Construct an instance of this class
             %   Detailed explanation goes here
-            imgSize = 250;
+            imgSize = 190;
         end        
     end
 end
